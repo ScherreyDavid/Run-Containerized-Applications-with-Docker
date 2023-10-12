@@ -16,8 +16,6 @@ docker info
 sudo docker run hello-world
 ```
 
-![Untitled](assets/images/the-docker-client/Untitled.png)
-
 ## 2. Getting help
 
 ```bash
