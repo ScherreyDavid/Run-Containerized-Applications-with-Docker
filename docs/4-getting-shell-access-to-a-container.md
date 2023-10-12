@@ -2,13 +2,11 @@
 
 ## 1. Run a Container
 
-- Running a container, `rockylinux:9.1`, give it the name `container001`, and use the `-i` interactive and `-t` tty options to allocate a terminal with root access to install other programs or make changes.
+- Running a container, `my_centos:9.1`, give it the name `container001`, and use the `-i` interactive and `-t` tty options to allocate a terminal with root access to install other programs or make changes.
     
     ```bash
-    docker container run --name=container001 -it rockylinux:9.1
+    docker container run --name=container001 -it my_centos:9.1
     ```
-    
-    ![Untitled](assets/images/getting-shell-access-to-a-container//Untitled.png)
     
 - Install a program `nmap` and exit without killing the container using `Crtl + P + Q`
     
@@ -24,8 +22,6 @@
     ```bash
     docker container ls
     ```
-    
-    ![Untitled](assets/images/getting-shell-access-to-a-container//Untitled%201.png)
     
 - Gain shell access to the container, `container001`
     
@@ -48,11 +44,7 @@
     docker container run -it debian
     ```
     
-    ![Untitled](assets/images/getting-shell-access-to-a-container//Untitled%202.png)
-    
 - Run `ls` command
-    
-    ![Untitled](assets/images/getting-shell-access-to-a-container//Untitled%203.png)
     
 - View the content of the `passwd` file.
     
@@ -75,19 +67,17 @@
 
 ## 3. Execute Commands Without Getting Shell Access
 
-- Start the container, `sad_bouman` by first checking the exited container list using:
+- Start the container, `mu_centos` by first checking the exited container list using:
     
     ```bash
     docker container ls -a
     ```
     
-    ![Untitled](assets/images/getting-shell-access-to-a-container//Untitled%206.png)
+  ![Untitled](assets/images/Untitled2.png)
     
     ```bash
     docker container start my_centos
     ```
-    
-    ![Untitled](assets/images/getting-shell-access-to-a-container//Untitled%207.png)
     
 - Check actively running container(s)
     
@@ -95,15 +85,11 @@
     docker container ls
     ```
     
-    ![Untitled](assets/images/getting-shell-access-to-a-container//Untitled%208.png)
-    
 - Get shell access and exit without killing the container using `Crtl + P + Q`
     
     ```bash
     docker container exec -it my_centos bash
     ```
-    
-    ![Untitled](assets/images/getting-shell-access-to-a-container//Untitled%209.png)
 
 ## 4. Getting Information about the Running Containers.
 
@@ -113,7 +99,7 @@
     docker container ls -a
     ```
     
-    ![Untitled](assets/images/getting-shell-access-to-a-container//Untitled%2012.png)
+  ![Untitled](assets/images/Untitled2.png)
     
 - Remove all containers quietly.
     
@@ -121,13 +107,11 @@
     docker container rm -f $(docker container ls -a -q)
     ```
     
-    ![Untitled](assets/images/getting-shell-access-to-a-container//Untitled%2013.png)
-    
     ```bash
     docker container ls -a
     ```
     
-    ![Untitled](assets/images/getting-shell-access-to-a-container//Untitled%2014.png)
+    ![Untitled](assets/images/Untitled2.png)
     
 - Start an `nginx` server.
     
@@ -135,9 +119,9 @@
     docker container run -d -p 8080:80 --name=mysite nginx
     ```
     
-    ![Untitled](assets/images/getting-shell-access-to-a-container//Untitled%2015.png)
+    ![Untitled](assets/images/Untitled7.png)
     
-    ![Untitled](assets/images/getting-shell-access-to-a-container//Untitled%2016.png)
+    ![Untitled](assets/images/Untitled4.png)
     
 - View all running container.
     
@@ -145,7 +129,7 @@
     docker container ls -a
     ```
     
-    ![Untitled](assets/images/getting-shell-access-to-a-container//Untitled%2017.png)
+    ![Untitled](assets/images//Untitled2.png)
     
 - View the container, `mysite`, port.
     
@@ -153,17 +137,11 @@
     docker container port mysite
     ```
     
-    ![Untitled](assets/images/getting-shell-access-to-a-container//Untitled%2018.png)
-    
 - View container, `mysite` logs
     
     ```bash
     docker container logs mysite
     ```
-    
-    ![Untitled](assets/images/getting-shell-access-to-a-container//Untitled%2019.png)
-    
-    ![Untitled](assets/images/getting-shell-access-to-a-container//Untitled%2020.png)
     
 - View real-time log updates.
     
@@ -176,8 +154,6 @@
     ```bash
     docker container top mysite
     ```
-    
-    ![Untitled](assets/images/getting-shell-access-to-a-container//Untitled%2021.png)
     
 - Or use `ps` command to view the processes.
     
