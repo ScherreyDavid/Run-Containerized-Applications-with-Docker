@@ -10,10 +10,6 @@
 for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do sudo apt-get remove $pkg; done
 ```
 
-If no older version is present, below is the output:
-
-![Untitled](assets/images/installing-docker-engine-on-ubuntu/Untitled.png)
-
 ## 2. **Installation using the apt repository**
 
 It's essential to establish the Docker repository before initiating the Docker Engine installation on a new host machine. Afterward, you can install and update Docker from the repository. 
@@ -69,15 +65,6 @@ apt-cache policy docker-ce
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
 
-- Check the status of the Docker
-
-```bash
-sudo systemctl status docker
-```
-
-![Untitled](assets/images/installing-docker-engine-on-ubuntu/Untitled%201.png)
-
-
 ## 3. **Install using the convenience script**
 
 Docker provides a convenience script at [https://get.docker.com/](https://get.docker.com/) to install Docker into development environments non-interactively. The convenience script isn’t recommended for production environments, but it’s useful for creating a provisioning script tailored to your needs. 
@@ -103,7 +90,7 @@ sudo sh get-docker.sh
 
 - If you prefer not to prefix sudo before Docker commands, establish a Unix group named docker and add desired users. When the Docker daemon initializes, it generates a Unix socket, accessible to docker group members. Note that in certain Linux distributions, installation of Docker Engine via a package manager might automatically create this group, eliminating the need for manual setup.
 
-- Create the `docker` group and add current user `tux` to the Docker group to be able to run the docker command.
+- Create the `docker` group and add current user `david` to the Docker group to be able to run the docker command.
 
 ```bash
 sudo groupadd docker && sudo usermod -aG docker $USER
@@ -138,7 +125,5 @@ exit
 ```bash
 docker --version
 ```
-
-![Untitled](assets/images/installing-docker-engine-on-ubuntu/Untitled%202.png)
 
 ### Reference: [https://docs.docker.com/engine/install/ubuntu/](https://docs.docker.com/engine/install/ubuntu/)
