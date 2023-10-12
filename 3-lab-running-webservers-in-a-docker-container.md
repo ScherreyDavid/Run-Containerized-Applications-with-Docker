@@ -24,7 +24,7 @@ docker ps
 ```
 
 
-![Untitled](assets/images/lab-running-a-webserver-in-a-docker-container/Untitled.png)
+![Untitled](assets/images/Untitled.png)
 
 - Enter the `ipaddress:port` of the server into a web browser to confirm its status.
 
@@ -38,10 +38,10 @@ docker ps
 
 ## 2. Stopping a container
 
-- use docker container stop `CONTAINER_ID|CONTAINER_NAME.` For example, the container_id of a running nginx web server is `g85a67d879ty`, and the container_name is `mysite3`
+- use docker container stop `CONTAINER_ID|CONTAINER_NAME.` For example, the container_id of a running nginx web server is `a5bd16af0a4b`, and the container_name is `mysite3`
 
 ```bash
-docker container stop g85a67d879ty
+docker container stop a5bd16af0a4b
 ```
 
 - or use the command below to kill a container by name.
@@ -55,17 +55,15 @@ docker container stop mysite2
 - stopping multiple containers using the first three characters of the `container_id`
 
 ```bash
-docker container stop d75 553 6be 568
+docker container stop a5b e36 faa 568
 ```
 
 ## 3. Remove a Running Container and Docker Image from Local
 
-Example: removing a container image, `nginx`, and `hello-world` with running container_names: `mysite1 mysite2 mysite3 mysite4 mysite5 sleepy_curran laughing_mirzakhani interesting_benz clever_kare wonderful_nash flamboyant_fermi magical_heyrovsky` requires force `-f` removing the running containers before the images can be removed.
-
-![Untitled](assets/images/lab-running-a-webserver-in-a-docker-container/Untitled%205.png)
+Example: removing a container image, `nginx`, and `hello-world` with running container_names: `mysite1 mysite2 mysite3 mysite4 mysite5` requires force `-f` removing the running containers before the images can be removed.
 
 ```bash
-docker remove rm mysite1 mysite2 mysite3 mysite4 mysite5 sleepy_curran laughing_mirzakhani interesting_benz clever_kare wonderful_nash flamboyant_fermi magical_heyrovsky -f
+docker remove rm mysite1 mysite2 mysite3 mysite4 mysite5 -f
 docker image rm nginx httpd hello-world
 ```
 
