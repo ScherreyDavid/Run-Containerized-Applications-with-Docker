@@ -2,10 +2,10 @@
 
 ## 1. Committing Container Changes into a New Image
 
-- Start a `rockylinux` container
+- Start a `my_centos` container
     
     ```bash
-    docker container run -it --name=container1 rockylinux:9.1
+    docker container run -it --name=container1 my_centos:9.1
     ```
     
 - Create a new file `xyz.txt`.
@@ -45,7 +45,7 @@
 - Start another `rockylinux` container.
     
     ```bash
-    docker container run -it --name=container2 rockylinux:9.1
+    docker container run -it --name=container2 my_centos:9.1
     ```
     
 - Check the root folder on `container2` for files from `container1`.
@@ -77,7 +77,7 @@
 - Commit the exited container, `container1`, with container_id `304`
     
     ```bash
-    docker commit -m nmap-installed -a muritala 304 molanre/my_rockylinux
+    docker commit -m nmap-installed -a davidscherreyiii 304 molanre/my_centos
     ```
     
 - View image available on the local machine.
@@ -86,24 +86,17 @@
     docker image ls
     ```
     
-    ![Untitled](assets/images/modifying-a-container/Untitled%207.png)
-    
-- Start a new container from the saved container image , `davidscherreyiii/my_rockylinux`.
+- Start a new container from the saved container image , `davidscherreyiii/my_centos`.
     
     ```bash
     docker container run -it davidscherreyiii/my_centos
     ```
     
-    ![Untitled](assets/images/modifying-a-container/Untitled%208.png)
-    
 - Check for the previously installed program, `nmap`, and file, `xyz.txt`.
     
     ```bash
     ls /root/ && nmap
-    ```
-    
-    ![Untitled](assets/images/modifying-a-container/Untitled%209.png)
-    
+    ```   
 
 ## 2. Tagging and Pushing Custom Images to Docker Hub
 
@@ -113,28 +106,26 @@
     docker image ls
     ```
     
-    ![Untitled](assets/images/modifying-a-container/Untitled%2010.png)
-    
-- Tagging docker images to create a custom image. Tagging images like `nginx` with your repository and custom name, `molanre/nginx:custom`.
+- Tagging docker images to create a custom image. Tagging images like `nginx` with your repository and custom name, `davidscherreyiii/nginx:custom`.
     
     ```bash
-    docker image tag nginx molanre/nginx:custom && docker image ls
+    docker image tag nginx davischerreyiii/nginx:custom && docker image ls
     ```
     
 - Adding a new tag, `1.0`, to the saved image, `my_rockylinux` and list all images on local machine.
     
     ```bash
-    docker image tag molanre/my_rockylinux:latest molanre/my_rockylinux:1.0 && docker image ls
+    docker image tag davidscherreyiii/my_centos:latest davidscherreyiii/my_centos:1.0 && docker image ls
     ```
     
-- Pushing an image, `molanre/my_rockylinux:latest` to Docker Hub by creating an account or logging in and run docker push. Logging in to Docker Hub on the terminal with username, `molanre` and password, `**********.`
+- Pushing an image, `davidscherreyiii/my_centos:latest` to Docker Hub by creating an account or logging in and run docker push. Logging in to Docker Hub on the terminal with username, `davidscherreyiii` and password, `**********.`
     
     ```bash
     docker login
     ```
     
     ```bash
-    docker image push molanre/my_rockylinux:latest
+    docker image push davidscherreyiii/my_centos
     ```
     
-    ![Untitled](assets/images/modifying-a-container/Untitled%2015.png)
+    ![Untitled](assets/images/Untitled5.png)
