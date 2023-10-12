@@ -60,15 +60,11 @@
     cat /etc/passwd
     ```
     
-    ![Untitled](assets/images/getting-shell-access-to-a-container//Untitled%204.png)
-    
 - Find the container IP address.
     
     ```bash
     hostname -I
     ```
-    
-    ![Untitled](assets/images/getting-shell-access-to-a-container//Untitled%205.png)
     
 - Exit the container
     
@@ -88,7 +84,7 @@
     ![Untitled](assets/images/getting-shell-access-to-a-container//Untitled%206.png)
     
     ```bash
-    docker container start sad_bouman
+    docker container start my_centos
     ```
     
     ![Untitled](assets/images/getting-shell-access-to-a-container//Untitled%207.png)
@@ -104,27 +100,10 @@
 - Get shell access and exit without killing the container using `Crtl + P + Q`
     
     ```bash
-    docker container exec -it sad_bouman bash
+    docker container exec -it my_centos bash
     ```
     
     ![Untitled](assets/images/getting-shell-access-to-a-container//Untitled%209.png)
-    
-- Execute commands in the container `d6c592c8b91b` , without getting shell access.
-    
-    ```bash
-    docker container exec d6c592c8b91b cat /etc/shadow
-    ```
-    
-    ![Untitled](assets/images/getting-shell-access-to-a-container//Untitled%2010.png)
-    
-- Execute the `update` command.
-    
-    ```bash
-    docker container exec d6c apt update
-    ```
-    
-    ![Untitled](assets/images/getting-shell-access-to-a-container//Untitled%2011.png)
-    
 
 ## 4. Getting Information about the Running Containers.
 
@@ -206,15 +185,11 @@
     ps -ef | grep nginx
     ```
     
-    ![Untitled](assets/images/getting-shell-access-to-a-container//Untitled%2022.png)
-    
 - Display Real-time information about running container(s)
     
     ```bash
     docker container stats
     ```
-    
-    ![Untitled](assets/images/getting-shell-access-to-a-container//Untitled%2023.png)
     
 - View detailed information about a container using the `inspect` command and filter to see specific information, such as the container’s private IP address.
     
@@ -222,12 +197,8 @@
     docker container inspect mysite | grep -i ipaddress
     ```
     
-    ![Untitled](assets/images/getting-shell-access-to-a-container//Untitled%2024.png)
-    
 - Ping the private IP address, `172.17.0.2`.
     
     ```bash
     ping 172.17.0.2
     ```
-    
-    ![Untitled](assets/images/getting-shell-access-to-a-container//Untitled%2025.png)
