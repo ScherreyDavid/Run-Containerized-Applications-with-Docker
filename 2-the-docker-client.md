@@ -45,21 +45,15 @@ docker image pull ubuntu:latest
 docker image pull mysql        
 ```
 
-![Untitled](assets/images/the-docker-client//Untitled%201.png)
-
 ## 4. Checking and Listing local images
 
 ```bash
 docker images
 ```
 
-![Untitled](assets/images/the-docker-client//Untitled%202.png)
-
 ```bash
 docker image ls
 ```
-
-![Untitled](assets/images/the-docker-client//Untitled%203.png)
 
 ## 5. Running Containers
 
@@ -75,8 +69,6 @@ docker container run -it httpd
 ```bash
 docker container ls
 ```
-
-![Untitled](assets/images/the-docker-client//Untitled%204.png)
 
 - Check stopped containers using:
   
