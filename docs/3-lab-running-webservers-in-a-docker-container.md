@@ -43,8 +43,6 @@ docker container stop 5d61a0c20fd9
 docker container stop mysite2
 ```
 
-![Untitled](assets/images/lab-running-a-webserver-in-a-docker-container/Untitled.png)
-
 - stopping multiple containers using the first three characters of the `container_id`
 
 ```bash
