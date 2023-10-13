@@ -1,5 +1,5 @@
 # Overview
-![Untitled](assets/images/overview.png)
+![Untitled](assets/overview.png)
 
 The Docker Project, revolutionized the tech landscape in 2013 by introducing the concept of "containers," portable sandboxes for running programs. This innovation played a significant role in driving the widespread adoption of cloud technology.
 
