@@ -1,9 +1,7 @@
 # Running Containerized Applications with Docker
 ![Untitled](docs/assets/images/overview.png)
 
-The Docker Project, revolutionized the tech landscape in 2013 by introducing the concept of "containers," portable sandboxes for running programs. This innovation played a significant role in driving the widespread adoption of cloud technology.
-
-This hands-on project is geared toward helping users run containerized applications using Docker on an Ubuntu system. The project unfolds in the following stages:
+This hands-on Docker project introducing the concept of "containers," portable sandboxes for running programs is geared toward helping users run containerized applications using Docker on an Ubuntu system. The project unfolds in the following stages:
 
 1. [Installation Docker Engine on Ubuntu](1-installing-docker-engine-on-ubuntu.md): It begins with the installation of Docker Engine on Ubuntu, guiding users through the installation process, version verification, and configuration for automatic startup.
 2. [Exploring Docker Client](2-the-docker-client.md): Next, the project delves into the Docker client and its pivotal role in managing Docker containers. It explores various Docker commands like 'docker run,' 'docker stop,' 'docker ps,' and 'docker logs.'
